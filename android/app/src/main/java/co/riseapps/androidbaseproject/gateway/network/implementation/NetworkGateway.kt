@@ -10,32 +10,47 @@ class NetworkGateway(private val baseEngine: BaseEngine) :
     override fun getResults(id: String): Single<List<SubjectResult>> {
         return Single.just(
             listOf(
-                SubjectResult(name = "Adaptive", availabilityAge = 20, score = 35, picture = ""),
-                SubjectResult(name = "Cognition", availabilityAge = 20, score = 10, picture = ""),
                 SubjectResult(
+                    type = SubjectResult.ADAPTIVE,
+                    name = "Adaptive",
+                    availabilityAge = 20,
+                    score = 35
+                ),
+                SubjectResult(
+                    type = SubjectResult.COGNITION,
+                    name = "Cognition",
+                    availabilityAge = 20,
+                    score = 10
+                ),
+                SubjectResult(
+                    type = SubjectResult.FUNCTIONAL_ACADEMIC,
                     name = "Functional academic",
                     availabilityAge = 40,
-                    score = 0,
-                    picture = ""
+                    score = 0
                 ),
                 SubjectResult(
                     name = "Language & Communication",
                     availabilityAge = 20,
                     score = 25,
-                    picture = ""
+                    type = SubjectResult.LANGUAGE_AND_COMMUNICATION
                 ),
                 SubjectResult(
                     name = "Motor Skills",
                     availabilityAge = 20,
                     score = 35,
-                    picture = ""
+                    type = SubjectResult.MOTOR_SKILLS
                 ),
-                SubjectResult(name = "Play Skills", availabilityAge = 20, score = 25, picture = ""),
+                SubjectResult(
+                    name = "Play Skills",
+                    availabilityAge = 20,
+                    score = 25,
+                    type = SubjectResult.PLAY_SKILLS
+                ),
                 SubjectResult(
                     name = "Social Skills",
                     availabilityAge = 20,
                     score = 90,
-                    picture = ""
+                    type = SubjectResult.SOCIAL_SKILLS
                 )
             )
         )

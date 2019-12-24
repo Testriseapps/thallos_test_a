@@ -12,6 +12,14 @@ import android.widget.TextView
 import co.riseapps.androidbaseproject.R
 import co.riseapps.androidbaseproject.model.Person
 import co.riseapps.androidbaseproject.model.SubjectResult
+import co.riseapps.androidbaseproject.model.SubjectResult.Companion.ADAPTIVE
+import co.riseapps.androidbaseproject.model.SubjectResult.Companion.COGNITION
+import co.riseapps.androidbaseproject.model.SubjectResult.Companion.FUNCTIONAL_ACADEMIC
+import co.riseapps.androidbaseproject.model.SubjectResult.Companion.LANGUAGE_AND_COMMUNICATION
+import co.riseapps.androidbaseproject.model.SubjectResult.Companion.MOTOR_SKILLS
+import co.riseapps.androidbaseproject.model.SubjectResult.Companion.PLAY_SKILLS
+import com.squareup.picasso.Picasso
+import com.squareup.picasso.Transformation
 import kotlinx.android.synthetic.main.result_card_view.view.*
 
 class ResultsAdapter(
@@ -39,7 +47,6 @@ class ResultsAdapter(
                 )
             }
         }
-
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -57,8 +64,9 @@ class ResultsAdapter(
 
     override fun onBindViewHolder(viewHolder: AbstractResultViewHolder, position: Int) {
         val result = results[position]
-        viewHolder.tvName.text = result.name
         val context = viewHolder.tvName.context
+        viewHolder.tvName.text = result.name
+       loadImage(result, viewHolder.ivPicture)
         if (viewHolder is ResultViewHolder) {
             setScore(viewHolder, result, context)
             viewHolder.score20.findViewById<TextView>(R.id.tvScoreItemDescription).text =
@@ -131,7 +139,22 @@ class ResultsAdapter(
             .setImageDrawable(drawable)
         viewHolder.score100.findViewById<ImageView>(R.id.ivScoreItemPicture)
             .setImageDrawable(drawable)
+    }
 
+    fun loadImage(result: SubjectResult, image: ImageView) {
+        val imageId = when (result.type) {
+            ADAPTIVE -> R.drawable.icon_adaptive
+            COGNITION -> R.drawable.icon_cognition
+            FUNCTIONAL_ACADEMIC -> R.drawable.icon_functional
+            LANGUAGE_AND_COMMUNICATION -> R.drawable.icon_language_communication
+            MOTOR_SKILLS -> R.drawable.icon_motor
+            PLAY_SKILLS -> R.drawable.icon_play
+            else -> R.drawable.icon_social
+        }
+        Picasso.get()
+            .load(imageId)
+            .resize(150, 150)
+            .into(image)
     }
 
 
@@ -140,11 +163,11 @@ class ResultsAdapter(
     }
 
     abstract class AbstractResultViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        abstract  val tvName: TextView
+        val tvName: TextView = itemView.tvResultCardName
+        val ivPicture: ImageView = itemView.ivItemPicture
     }
 
     class ResultViewHolder(itemView: View) : AbstractResultViewHolder(itemView) {
-        override val tvName: TextView = itemView.tvResultCardName
         val score20: ConstraintLayout = itemView.findViewById(R.id.clScore20)
         val score40: ConstraintLayout = itemView.findViewById(R.id.clScore40)
         val score60: ConstraintLayout = itemView.findViewById(R.id.clScore60)
@@ -152,14 +175,11 @@ class ResultsAdapter(
         val score100: ConstraintLayout = itemView.findViewById(R.id.clScore100)
     }
 
-    class ResultUnavailableViewHolder(itemView: View) : AbstractResultViewHolder(itemView) {
-        override val tvName: TextView = itemView.tvResultCardName
-    }
+    class ResultUnavailableViewHolder(itemView: View) : AbstractResultViewHolder(itemView)
 
     companion object {
         const val AVAILABLE: Int = 1061
         const val UNAVAILABLE: Int = 1062
-
     }
 
 }
