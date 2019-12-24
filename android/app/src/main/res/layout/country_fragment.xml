@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/llCountryRoot"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:paddingTop="50dp"
+        android:paddingStart="14dp">
+
+    <TextView
+            android:id="@+id/tvCountryName"
+            style="@style/QuickSandBold.Black.36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Albania"/>
+
+    <TextView
+            android:id="@+id/tvCountryCapitalName"
+            style="@style/QuickSandBold.Grey.32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Tirana"/>
+    <View
+            android:id="@+id/vCountryStub"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"/>
+
+    <TextView
+            android:id="@+id/tvCountryRegionLabel"
+            style="@style/QuickSandBold.Black.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/region"/>
+
+    <TextView
+            android:id="@+id/tvCountryRegionName"
+            style="@style/QuickSandRegular.Grey.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Europe"/>
+
+    <TextView
+            android:id="@+id/tvCountrySubRegionLabel"
+            style="@style/QuickSandBold.Black.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subregion"/>
+
+    <TextView
+            android:id="@+id/tvCountrySubRegionName"
+            style="@style/QuickSandRegular.Grey.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Southern Europe"/>
+
+    <TextView
+            android:id="@+id/tvCountryLanguagesLabel"
+            style="@style/QuickSandBold.Black.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/languages"/>
+
+    <TextView
+            android:id="@+id/tvCountryLanguagesList"
+            style="@style/QuickSandRegular.Grey.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Albanian"/>
+
+    <TextView
+            android:id="@+id/tvCountryCurrenciesLabel"
+            style="@style/QuickSandBold.Black.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currencies"/>
+
+    <TextView
+            android:id="@+id/tvCountryCurrenciesName"
+            style="@style/QuickSandRegular.Grey.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Albanian lek"/>
+
+    <TextView
+            android:id="@+id/tvCountryTimezonesLabel"
+            style="@style/QuickSandBold.Black.18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timezones"/>
+
+    <TextView
+            android:id="@+id/tvCountryTimezonesList"
+            style="@style/QuickSandRegular.Grey.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="UTC+01:00"/>
+
+</LinearLayout>

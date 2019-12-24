@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndroidBaseProject</string>
+    <string name="all_countries">All countries</string>
+    <string name="countries_by_region">Countries by region</string>
+    <string name="region">Region:</string>
+    <string name="subregion">Subregion:</string>
+    <string name="languages">Languages:</string>
+    <string name="currencies">Currencies:</string>
+    <string name="timezones">Timezones:</string>
+    <string name="all">All</string>
+</resources>

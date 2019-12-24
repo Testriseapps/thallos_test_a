@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorDarkBlue</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="splashScreenTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="QuickSandBold">
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="QuickSandRegular">
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+    </style>
+
+    <style name="QuickSandBold.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="QuickSandBold.Black">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="QuickSandBold.Grey">
+        <item name="android:textColor">@color/colorGrey</item>
+    </style>
+
+    <style name="QuickSandRegular.Grey">
+        <item name="android:textColor">@color/colorGrey</item>
+    </style>
+
+    <style name="QuickSandBold.Black.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="QuickSandBold.Grey.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="QuickSandBold.White.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="QuickSandBold.Grey.32">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="QuickSandBold.Black.36">
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="QuickSandRegular.Grey.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>
