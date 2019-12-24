@@ -42,25 +42,12 @@ class CountriesFragment : Fragment(), CountriesPresenter.CountriesView {
         viewModel = ViewModelProviders.of(this).get(CountriesViewModel::class.java)
         viewModel.countries = ArrayList()
         rvCountries.layoutManager = LinearLayoutManager(context)
-        rvCountries.adapter = CountriesAdapter(viewModel.countries) {
-            (activity as MainActivity).showCountryFragment(it)
-        }
+        rvCountries.adapter = CountriesAdapter(viewModel.countries) {}
         presenter = (activity!!.application as BaseApp).kodein.instance()
         presenter.view = this
 
-        if (selectedRegion != null) {
-            selectedRegion?.let {
-                presenter.loadCountries(it)
-                (activity as MainActivity).showToolbar(it.name)
-            }
-        } else {
-            (activity as MainActivity).showToolbar(getString(R.string.all))
-            presenter.loadAllCountries()
-        }
-    }
-
-    fun setRegion(selectedRegion: Region) {
-        this.selectedRegion = selectedRegion
+        (activity as MainActivity).showToolbar(getString(R.string.all))
+        presenter.loadAllCountries()
     }
 
     override fun onCountriesLoad(countries: List<CountryEntity>) {
