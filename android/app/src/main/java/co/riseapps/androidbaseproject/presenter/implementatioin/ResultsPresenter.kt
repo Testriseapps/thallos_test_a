@@ -1,29 +1,30 @@
 package co.riseapps.androidbaseproject.presenter.implementatioin
 
 import co.riseapps.androidbaseproject.gateway.network.INetworkGateway
-import co.riseapps.androidbaseproject.model.entity.CountryEntity
-import co.riseapps.androidbaseproject.presenter.ICountriesPresenter
+import co.riseapps.androidbaseproject.model.Person
+import co.riseapps.androidbaseproject.model.SubjectResult
+import co.riseapps.androidbaseproject.presenter.IResultsPresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class CountriesPresenter(private val networkGateway: INetworkGateway) : ICountriesPresenter {
-    override lateinit var view: CountriesView
+class ResultsPresenter(private val networkGateway: INetworkGateway) : IResultsPresenter {
+    override lateinit var view: ResultsView
 
     override val disposables: MutableList<Disposable>
         get() = ArrayList()
 
-    override fun loadAllCountries() {
+    override fun loadAllResults(person: Person) {
         add(
             networkGateway
-                .getCountries()
+                .getResults(person.id)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe { view.showProgress("Loading") }
                 .doFinally { view.hideProgress() }
                 .subscribe(
                     {
-                        view.onCountriesLoad(it)
+                        view.onResultsLoaded(it)
                     },
                     {
 
@@ -31,8 +32,8 @@ class CountriesPresenter(private val networkGateway: INetworkGateway) : ICountri
         )
     }
 
-    interface CountriesView {
-        fun onCountriesLoad(countries: List<CountryEntity>)
+    interface ResultsView {
+        fun onResultsLoaded(countries: List<SubjectResult>)
 
         fun showProgress(message: String?)
 

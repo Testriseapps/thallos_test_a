@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="36dp"
     android:background="@color/colorDarkBlue"
-    tools:context=".view.CountriesFragment">
+    tools:context=".view.ResultsFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvCountries"

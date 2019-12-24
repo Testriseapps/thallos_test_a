@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View.VISIBLE
 import co.riseapps.androidbaseproject.R
-import co.riseapps.androidbaseproject.view.CountriesFragment
+import co.riseapps.androidbaseproject.view.ResultsFragment
 import kotlinx.android.synthetic.main.toolbar_layout.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        showCountriesFragment()
+        showResultsFragment()
     }
 
     fun showToolbar(title: String?) {
@@ -24,10 +24,10 @@ class MainActivity : AppCompatActivity() {
         toolbar_container.visibility = VISIBLE
     }
 
-    fun showCountriesFragment() {
+    private fun showResultsFragment() {
         val beginTransaction = supportFragmentManager.beginTransaction()
-        beginTransaction.replace(R.id.clMainRoot, CountriesFragment.newInstance())
-        beginTransaction.addToBackStack(CountriesFragment::class.java.simpleName)
+        beginTransaction.replace(R.id.clMainRoot, ResultsFragment.newInstance())
+        beginTransaction.addToBackStack(ResultsFragment::class.java.simpleName)
         beginTransaction.commit()
     }
 

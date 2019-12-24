@@ -11,25 +11,26 @@ import android.view.ViewGroup
 import co.riseapps.androidbaseproject.BaseApp
 import co.riseapps.androidbaseproject.R
 import co.riseapps.androidbaseproject.activity.MainActivity
-import co.riseapps.androidbaseproject.model.entity.CountryEntity
-import co.riseapps.androidbaseproject.presenter.ICountriesPresenter
-import co.riseapps.androidbaseproject.presenter.implementatioin.CountriesPresenter
-import co.riseapps.androidbaseproject.view.adapter.CountriesAdapter
-import co.riseapps.androidbaseproject.viewModel.CountriesViewModel
+import co.riseapps.androidbaseproject.model.Person
+import co.riseapps.androidbaseproject.model.SubjectResult
+import co.riseapps.androidbaseproject.presenter.IResultsPresenter
+import co.riseapps.androidbaseproject.presenter.implementatioin.ResultsPresenter
+import co.riseapps.androidbaseproject.view.adapter.ResultsAdapter
+import co.riseapps.androidbaseproject.viewModel.ResultsViewModel
 import com.github.salomonbrys.kodein.instance
-import kotlinx.android.synthetic.main.countries_fragment.*
+import kotlinx.android.synthetic.main.results_fragment.*
 
-class CountriesFragment : Fragment(), CountriesPresenter.CountriesView {
-    private lateinit var viewModel: CountriesViewModel
+class ResultsFragment : Fragment(), ResultsPresenter.ResultsView {
+    private lateinit var viewModel: ResultsViewModel
 
-    private lateinit var presenter: ICountriesPresenter
+    private lateinit var presenter: IResultsPresenter
     private lateinit var progressDialog: ProgressDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.countries_fragment, container, false)
+        return inflater.inflate(R.layout.results_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,18 +38,18 @@ class CountriesFragment : Fragment(), CountriesPresenter.CountriesView {
         if (!this::progressDialog.isInitialized) {
             progressDialog = ProgressDialog(context)
         }
-        viewModel = ViewModelProviders.of(this).get(CountriesViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(ResultsViewModel::class.java)
         viewModel.countries = ArrayList()
         rvCountries.layoutManager = LinearLayoutManager(context)
-        rvCountries.adapter = CountriesAdapter(viewModel.countries) {}
+        rvCountries.adapter = ResultsAdapter(viewModel.countries)
         presenter = (activity!!.application as BaseApp).kodein.instance()
         presenter.view = this
 
         (activity as MainActivity).showToolbar(getString(R.string.all))
-        presenter.loadAllCountries()
+        presenter.loadAllResults(Person().apply { id = "Qsdfhjl-adfa223r-12fajefaw-2or1jlj2hr1k2lrhr" })
     }
 
-    override fun onCountriesLoad(countries: List<CountryEntity>) {
+    override fun onResultsLoaded(countries: List<SubjectResult>) {
         viewModel.countries.clear()
         viewModel.countries.addAll(countries)
         rvCountries.adapter?.notifyDataSetChanged()
@@ -64,7 +65,7 @@ class CountriesFragment : Fragment(), CountriesPresenter.CountriesView {
     }
 
     companion object {
-        fun newInstance() = CountriesFragment()
+        fun newInstance() = ResultsFragment()
     }
 
 }
