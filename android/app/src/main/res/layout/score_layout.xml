@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <include android:id="@+id/clScore20" layout="@layout/score_item" />
+
+    <include android:id="@+id/clScore40" layout="@layout/score_item" />
+
+    <include android:id="@+id/clScore60" layout="@layout/score_item" />
+
+    <include android:id="@+id/clScore80" layout="@layout/score_item" />
+
+    <include android:id="@+id/clScore100" layout="@layout/score_item" />
+
+</LinearLayout>

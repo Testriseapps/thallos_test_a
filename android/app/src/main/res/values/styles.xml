@@ -12,51 +12,55 @@
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
-    <style name="QuickSandBold">
-        <item name="android:fontFamily">@font/quicksand_bold</item>
+    <style name="Montserrat">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 
-    <style name="QuickSandRegular">
-        <item name="android:fontFamily">@font/quicksand_regular</item>
+    <style name="MontserratRegular">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="QuickSandBold.White">
+    <style name="Montserrat.White">
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 
-    <style name="QuickSandBold.Black">
+    <style name="Montserrat.Black">
         <item name="android:textColor">@color/colorBlack</item>
     </style>
 
-    <style name="QuickSandBold.Grey">
+    <style name="Montserrat.Grey">
         <item name="android:textColor">@color/colorGrey</item>
     </style>
 
-    <style name="QuickSandRegular.Grey">
+    <style name="MontserratRegular.Grey">
         <item name="android:textColor">@color/colorGrey</item>
     </style>
 
-    <style name="QuickSandBold.Black.18">
+    <style name="Montserrat.Black.18">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="QuickSandBold.Grey.18">
+    <style name="MontserratRegular.Grey.18">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="QuickSandBold.White.18">
+    <style name="MontserratRegular.Grey.10">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="Montserrat.White.18">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="QuickSandBold.Grey.32">
+    <style name="Montserrat.Grey.32">
         <item name="android:textSize">32sp</item>
     </style>
 
-    <style name="QuickSandBold.Black.36">
+    <style name="Montserrat.Black.36">
         <item name="android:textSize">36sp</item>
     </style>
 
-    <style name="QuickSandRegular.Grey.14">
+    <style name="MontserratRegular.Grey.14">
         <item name="android:textSize">14sp</item>
     </style>
 </resources>

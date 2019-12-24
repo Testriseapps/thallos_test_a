@@ -9,4 +9,8 @@
     <string name="timezones">Timezones:</string>
     <string name="all">All</string>
     <string name="assessment_results">Assessment results</string>
+    <string name="delayed">Delayed</string>
+    <string name="tracking">Tracking</string>
+    <string name="advanced">Advanced</string>
+    <string name="not_available">Not available for this age</string>
 </resources>

@@ -25,6 +25,10 @@ class ResultsFragment : Fragment(), ResultsPresenter.ResultsView {
 
     private lateinit var presenter: IResultsPresenter
     private lateinit var progressDialog: ProgressDialog
+    private var person: Person = Person().apply {
+        id = "Qsdfhjl-adfa223r-12fajefaw-2or1jlj2hr1k2lrhr"
+        ageMonths = 28
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,12 +45,12 @@ class ResultsFragment : Fragment(), ResultsPresenter.ResultsView {
         viewModel = ViewModelProviders.of(this).get(ResultsViewModel::class.java)
         viewModel.countries = ArrayList()
         rvCountries.layoutManager = LinearLayoutManager(context)
-        rvCountries.adapter = ResultsAdapter(viewModel.countries)
+        rvCountries.adapter = ResultsAdapter(viewModel.countries, person)
         presenter = (activity!!.application as BaseApp).kodein.instance()
         presenter.view = this
 
         (activity as MainActivity).showToolbar(getString(R.string.all))
-        presenter.loadAllResults(Person().apply { id = "Qsdfhjl-adfa223r-12fajefaw-2or1jlj2hr1k2lrhr" })
+        presenter.loadAllResults(person)
     }
 
     override fun onResultsLoaded(countries: List<SubjectResult>) {
