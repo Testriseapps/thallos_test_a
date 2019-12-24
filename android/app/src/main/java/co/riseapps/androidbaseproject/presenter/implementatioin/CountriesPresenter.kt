@@ -1,7 +1,6 @@
 package co.riseapps.androidbaseproject.presenter.implementatioin
 
 import co.riseapps.androidbaseproject.gateway.network.INetworkGateway
-import co.riseapps.androidbaseproject.model.Region
 import co.riseapps.androidbaseproject.model.entity.CountryEntity
 import co.riseapps.androidbaseproject.presenter.ICountriesPresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -13,24 +12,6 @@ class CountriesPresenter(private val networkGateway: INetworkGateway) : ICountri
 
     override val disposables: MutableList<Disposable>
         get() = ArrayList()
-
-    override fun loadCountries(region: Region) {
-        add(
-            networkGateway
-                .getCountries(region.name)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnSubscribe { view.showProgress("Loading") }
-                .doFinally { view.hideProgress() }
-                .subscribe(
-                    {
-                        view.onCountriesLoad(it)
-                    },
-                    {
-
-                    })
-        )
-    }
 
     override fun loadAllCountries() {
         add(

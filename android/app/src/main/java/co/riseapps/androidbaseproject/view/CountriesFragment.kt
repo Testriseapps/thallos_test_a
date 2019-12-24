@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import co.riseapps.androidbaseproject.BaseApp
 import co.riseapps.androidbaseproject.R
 import co.riseapps.androidbaseproject.activity.MainActivity
-import co.riseapps.androidbaseproject.model.Region
 import co.riseapps.androidbaseproject.model.entity.CountryEntity
 import co.riseapps.androidbaseproject.presenter.ICountriesPresenter
 import co.riseapps.androidbaseproject.presenter.implementatioin.CountriesPresenter
@@ -24,7 +23,6 @@ class CountriesFragment : Fragment(), CountriesPresenter.CountriesView {
     private lateinit var viewModel: CountriesViewModel
 
     private lateinit var presenter: ICountriesPresenter
-    private var selectedRegion: Region? = null
     private lateinit var progressDialog: ProgressDialog
 
     override fun onCreateView(
