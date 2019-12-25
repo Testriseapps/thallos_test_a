@@ -33,7 +33,7 @@ class ResultsPresenter(private val networkGateway: INetworkGateway) : IResultsPr
     }
 
     interface ResultsView {
-        fun onResultsLoaded(countries: List<SubjectResult>)
+        fun onResultsLoaded(results: List<SubjectResult>)
 
         fun showProgress(message: String?)
 

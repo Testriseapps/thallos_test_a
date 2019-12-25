@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="36dp"
-    android:background="@color/colorDarkBlue"
+    android:background="@color/colorGrey"
     android:padding="15dp"
+    android:orientation="vertical"
     tools:context=".view.ResultsFragment">
 
+    <include layout="@layout/info_layout"/>
+
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvCountries"
+        android:id="@+id/rvResults"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="15dp"
+        android:elevation="5dp"
         android:background="@drawable/results_background"
         android:paddingTop="14dp" />
 
-</FrameLayout>
+</LinearLayout>
