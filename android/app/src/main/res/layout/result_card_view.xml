@@ -30,7 +30,7 @@
             style="@style/Montserrat.Black.18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Albania" />
+            tools:text="Cognition" />
 
         <include
             android:id="@+id/scoreLayout"

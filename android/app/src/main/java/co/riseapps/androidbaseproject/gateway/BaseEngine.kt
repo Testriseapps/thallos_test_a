@@ -1,17 +1,12 @@
 package co.riseapps.androidbaseproject.gateway
 
-import co.riseapps.androidbaseproject.model.entity.CountryEntity
+import co.riseapps.androidbaseproject.model.SubjectResult
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface BaseEngine {
-    @GET("region/{region}")
-    fun getCountriesByRegion(@Path("region") region: String): Single<List<CountryEntity>>
+    @GET("")
+    fun getResultsById(@Path("id") region: String): Single<List<SubjectResult>>
 
-    @GET("all")
-    fun getAllCountries(): Single<List<CountryEntity>>
-
-    @GET("alpha/{code}")
-    fun getCountryByCode(@Path("code") code: String): Single<CountryEntity>
 }

@@ -20,8 +20,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showToolbar(title: String?) {
-        tvToolbarTitle?.text = title?.capitalize()
-        toolbar_container.visibility = VISIBLE
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        tvToolbarTitle?.text =  title?.capitalize()
     }
 
     private fun showResultsFragment() {
