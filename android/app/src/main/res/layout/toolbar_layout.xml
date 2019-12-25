@@ -12,13 +12,13 @@
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorDarkBlue">
+        android:background="@color/colorCoral">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@color/colorDarkBlue">
+            android:background="@color/colorCoral">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -28,7 +28,6 @@
                     android:id="@+id/tvToolbarCancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="-20dp"
                     android:src="@drawable/back_arrow"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
