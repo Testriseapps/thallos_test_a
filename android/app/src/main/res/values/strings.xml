@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidBaseProject</string>
+    <string name="all">All</string>
+    <string name="assessment_results">Assessment results</string>
+    <string name="delayed">Delayed</string>
+    <string name="tracking">Tracking</string>
+    <string name="advanced">Advanced</string>
+    <string name="not_available">Not available for this age</string>
+    <string name="info_message">%s needs to spend more time working on </string>
+    <string name="info_message_1">%d out of %d categories </string>
+    <string name="info_message_2">based on the average development of a </string>
+    <string name="info_message_3">old child </string>
+</resources>

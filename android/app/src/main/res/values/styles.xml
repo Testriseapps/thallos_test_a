@@ -1,0 +1,66 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorCoral</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="splashScreenTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="Montserrat">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="MontserratRegular">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="Montserrat.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="Montserrat.Black">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="Montserrat.Grey">
+        <item name="android:textColor">@color/colorGrey</item>
+    </style>
+
+    <style name="MontserratRegular.Grey">
+        <item name="android:textColor">@color/colorGrey</item>
+    </style>
+
+    <style name="Montserrat.Black.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MontserratRegular.Grey.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MontserratRegular.Grey.10">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="Montserrat.White.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Montserrat.Grey.32">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="Montserrat.Black.36">
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="MontserratRegular.Grey.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>
