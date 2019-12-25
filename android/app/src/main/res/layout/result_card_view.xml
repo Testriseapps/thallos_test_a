@@ -29,6 +29,7 @@
             android:id="@+id/tvResultCardName"
             style="@style/Montserrat.Black.18"
             android:ellipsize="end"
+            android:maxLength="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Cognition" />
